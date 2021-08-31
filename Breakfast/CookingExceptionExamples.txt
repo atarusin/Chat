@@ -1,0 +1,357 @@
+﻿
+         COOK Sync breakfast
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+cracking 2 eggs
+cooking the eggs ...
+Put eggs on plate
+eggs are READY!
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Put bacon on plate
+bacon is READY!
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+Fire! Toast is ruined!
+EROR ( 0 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.SyncCook.BrokeToastBread(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\SyncCook.cs:line 66
+   at Breakfast.Cook.BreakfastSync.BrokenCooking() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastSync.cs:line 43
+   at Helpers.Watcher.Of(Action action, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 53
+
+Breakfast is ready 00:00:14.1195690!
+
+         COOK Async breakfast
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+cracking 2 eggs
+cooking the eggs ...
+Put eggs on plate
+eggs are READY!
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Put bacon on plate
+bacon is READY!
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+EROR ( 0 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.BreakfastAsync.Broken?ooking() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastAsync.cs:line 42
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+
+Breakfast is ready 00:00:14.1245097!
+
+         COOK Parallel 1 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+Put bacon on plate
+Put eggs on plate
+eggs are READY!
+bacon is READY!
+EROR ( 0 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 72
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+
+Breakfast is ready 00:00:06.0450458!
+
+         COOK Parallel 2 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+cracking 2 eggs
+cooking the eggs ...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Put eggs on plate
+Put bacon on plate
+eggs are READY!
+bacon is READY!
+EROR ( 0 inner level): System.AggregateException: One or more errors occurred. (The toaster is on FIRE!!!)
+ ---> System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Breakfast.Cook.BreakfastParallel.<>c.<Broken?ooking2>b__3_2(Task`1 toasts) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 95
+   at System.Threading.Tasks.ContinuationTaskFromResultTask`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking2() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 97
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+EROR ( 1 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+EROR ( 1 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+
+Breakfast is ready 00:00:09.5516614!
+
+         COOK Parallel 3 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+Put bacon on plate
+bacon is READY!
+Put eggs on plate
+eggs are READY!
+EROR ( 0 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking3() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 119
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+
+Breakfast is ready 00:00:06.0675527!
+
+         COOK Parallel 4 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+cracking 2 eggs
+cooking the eggs ...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Put eggs on plate
+THROW            Burnt! The bacons is BURNT!!!
+EROR ( 0 inner level): System.InvalidOperationException: The bacons is BURNT!!!
+   at Breakfast.Cook.AsyncCook.BrokeFryBaconAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 110
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking4() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 136
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+
+Breakfast is ready 00:00:06.0662325!
+
+         COOK Parallel 5 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+THROW            Fire! Toast is ruined!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+THROW            Burnt! The bacons is BURNT!!!
+Put eggs on plate
+EROR ( 0 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking5() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 155
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+
+Breakfast is ready 00:00:06.0704317!
+
+         COOK Parallel 6 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+Put bacon on plate
+Put eggs on plate
+eggs are READY!
+bacon is READY!
+toast is READY!
+Pouring orange juice
+oj is READY!
+Breakfast is ready 00:00:06.0240201!
+
+         COOK Parallel 7 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+EROR ( 0 inner level): System.AggregateException: One or more errors occurred. (The toaster is on FIRE!!!)
+ ---> System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+   --- End of inner exception stack trace ---
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking7() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 206
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+EROR ( 1 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+EROR ( 1 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   at Breakfast.Cook.AsyncCook.BrokeMakeToastWithButterAndJamAsync(Int32 number) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 75
+
+Breakfast is ready 00:00:02.0689263!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+Put bacon on plate
+Put eggs on plate
+
+         COOK Parallel 8 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+THROW            Burnt! The bacons is BURNT!!!
+Put eggs on plate
+eggs are READY!
+bacon is READY!
+Pouring orange juice
+oj is READY!
+Breakfast is ready 00:00:06.0372790!
+
+         COOK Parallel 9 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+Put bacon on plate
+Put eggs on plate
+bacon is READY!
+eggs are READY!
+EROR ( 0 inner level): System.AggregateException: One or more errors occurred. (The toaster is on FIRE!!!)
+ ---> System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+   --- End of inner exception stack trace ---
+   at Breakfast.Cook.BreakfastParallel.<>c.<Broken?ooking9>b__10_2(Task`1 toasts) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 265
+   at System.Threading.Tasks.ContinuationTaskFromResultTask`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking9() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 271
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+EROR ( 1 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+EROR ( 1 inner level): System.InvalidOperationException: The toaster is on FIRE!!!
+   at Breakfast.Cook.AsyncCook.BrokeToastBreadAsync(Int32 slices) in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\AsyncCook.cs:line 67
+
+Breakfast is ready 00:00:08.4653003!
+
+         COOK Parallel 9 of way breakfast:
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+THROW            Fire! Toast is ruined!
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+cracking 2 eggs
+cooking the eggs ...
+Put bacon on plate
+Put eggs on plate
+bacon is READY!
+eggs are READY!
+EROR ( 0 inner level): System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Breakfast.Cook.BreakfastParallel.Broken?ooking10() in D:\_Project\Study-Projects\MultithreadingUseCases\Breakfast\Cook\BreakfastParallel.cs:line 296
+   at Helpers.Watcher.Of(Func`1 func, String description) in D:\_Project\Study-Projects\MultithreadingTryCases\Helpers\Watcher.cs:line 17
+
+Breakfast is ready 00:00:06.0523976!
+

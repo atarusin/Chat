@@ -1,0 +1,5 @@
+﻿32767 - The maximum number of worker threads in the thread pool.
+1000 - The maximum number of asynchronous I/O threads in the thread pool
+32767 - The number of available worker threads.
+1000 - The number of available asynchronous I/O threads.
+3 - Thread Count at Exists threads poll.

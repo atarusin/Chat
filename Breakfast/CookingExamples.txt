@@ -1,0 +1,108 @@
+﻿
+         COOK Sync breakfast
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+cracking 2 eggs
+cooking the eggs ...
+Put eggs on plate
+eggs are READY!
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Put bacon on plate
+bacon is READY!
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+Remove toast from toaster
+Putting butter on the 2 toast
+Putting jam on the 2 toasts
+2 toast is READY!
+Pouring orange juice
+oj is READY!
+Breakfast is ready 00:00:15.1186352!
+
+         COOK Async breakfast
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+cracking 2 eggs
+cooking the eggs ...
+Put eggs on plate
+eggs are READY!
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Put bacon on plate
+bacon is READY!
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+Remove toast from toaster
+Putting butter on the 2 toast
+Putting jam on the 2 toasts
+2 toast is READY!
+Pouring orange juice
+oj is READY!
+Breakfast is ready 00:00:15.0812840!
+
+         COOK Parallel 1 of way breakfast
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+Remove toast from toaster
+Putting butter on the 2 toast
+Putting jam on the 2 toasts
+cracking 2 eggs
+cooking the eggs ...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Put bacon on plate
+Put eggs on plate
+eggs are READY!
+bacon is READY!
+2 toast is READY!
+Pouring orange juice
+oj is READY!
+Breakfast is ready 00:00:06.0504514!
+
+         COOK Parallel 2 of way breakfast
+Pouring coffee
+coffee is READY!
+Warming the egg pan...
+putting 3 slices of bacon in the pan
+cooking first side of bacon...
+Putting a slice of bread in the toaster
+Putting a slice of bread in the toaster
+Start toasting...
+flipping a slice of bacon
+flipping a slice of bacon
+flipping a slice of bacon
+cooking the second side of bacon...
+Remove toast from toaster
+cracking 2 eggs
+cooking the eggs ...
+Putting butter on the 2 toast
+Putting jam on the 2 toasts
+2 toast is READY!
+Put bacon on plate
+Put eggs on plate
+bacon is READY!
+eggs are READY!
+Pouring orange juice
+oj is READY!
+Breakfast is ready 00:00:06.0222868!
