@@ -1,0 +1,57 @@
+﻿
+        static async void Colors()
+        {
+
+            GameBoard<int> board = new(new List<ColorSet<int>>() {
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2) }, 2),
+                //new ColorSet<int>(new List<Color<int>>() { new(2), new(1) }, 2),
+                //new ColorSet<int>(2)
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2) }, 2),
+                //new ColorSet<int>(new List<Color<int>>() { new(2) }, 2),
+                //new ColorSet<int>(new List<Color<int>>() { new(1) }, 2)
+                
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(1), new(3),  new(4),  new(4),  new(6),  new(7),  new(8),  new((1))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(2), new(2), new(3),  new(5),  new(5),  new(6),  new(9),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2), new(3),  new(4),  new(5),  new(6),  new(7),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2), new(4),  new(4),  new(5),  new(6),  new(7),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2), new(3),  new(3),  new(5),  new(5),  new(7),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2), new(3),  new(4),  new(5),  new(6),  new(7),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2), new(3),  new(4),  new(6),  new(6),  new(7),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(7), new(2), new(3),  new(4),  new(5),  new(6),  new(1),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2), new(3),  new(4),  new(5),  new(6),  new(7),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { new(1), new(2), new(3),  new(4),  new(5),  new(6),  new(7),  new(8),  new((9))}, 10),
+
+                //new ColorSet<int>(new List<Color<int>>() { }, 10),
+                //new ColorSet<int>(new List<Color<int>>() { }, 10)
+            });
+
+            //Searcher<int> sercher = new(board);
+            //ParallelSearcher<int> sercher = new(board);
+            ParallelAsyncSearcher<int> sercher = new(board);
+
+            //LimitedConcurrencyLevelTaskScheduler taskScheduler = new(2);
+
+            bool foundResult =
+                 await sercher.SearchAsync();
+
+                //await Task.Factory.StartNew(
+                //    function: sercher.SearchAsync,
+                //    cancellationToken: Task.Factory.CancellationToken,
+                //    creationOptions: Task.Factory.CreationOptions,
+                //    scheduler: Task.Factory.Scheduler ?? taskScheduler
+                //).Unwrap();
+
+
+            Console.Write(sercher.Print());
+        }
