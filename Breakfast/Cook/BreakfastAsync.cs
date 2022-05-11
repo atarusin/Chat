@@ -25,7 +25,7 @@ namespace Breakfast.Cook
             Console.WriteLine($"{toasts.Count()} toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking()
@@ -45,7 +45,7 @@ namespace Breakfast.Cook
             Console.WriteLine($"{toasts.Count()} toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
     }
 }

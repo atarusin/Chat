@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Helpers
@@ -8,12 +9,12 @@ namespace Helpers
     {
         public static async Task Of(Func<Task> func, string description)
         {
-            Console.WriteLine($"{description}");
+            Console.WriteLine($"> Run of: {description}");
+            Console.WriteLine(Thread.CurrentThread.GetInfo());
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             try
             {
-
                 await func();
 
                 stopWatch.Stop();
@@ -38,13 +39,14 @@ namespace Helpers
                 stopWatch.Stop();
                 Console.WriteLine(ex.ToLogInfo());
             }
-            Console.WriteLine($"Breakfast is ready {stopWatch.Elapsed}!");
+            Console.WriteLine($"> Run time: {stopWatch.Elapsed}!");
             Console.ReadKey();
         }
 
         public static void Of(Action action, string description)
         {
             Console.WriteLine($"{description}");
+            Console.WriteLine(Thread.CurrentThread.GetInfo());
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             try

@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Breakfast\Breakfast.csproj" />
     <ProjectReference Include="..\TaskAsyncParallel\TaskAsyncParallel.csproj" />
+    <ProjectReference Include="..\Threading\Threading.csproj" />
   </ItemGroup>
 
 </Project>

@@ -28,7 +28,7 @@ namespace Breakfast.Cook
             Console.WriteLine($"{toasts.Count()} toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task Сooking2()
@@ -50,8 +50,7 @@ namespace Breakfast.Cook
             await Task.WhenAll(tasks);
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
-
+            Console.WriteLine("Juice is is READY!");
         }
 
         public static async Task BrokenСooking()
@@ -75,7 +74,7 @@ namespace Breakfast.Cook
             Console.WriteLine($"{toasts.Count()} toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking2()
@@ -97,7 +96,7 @@ namespace Breakfast.Cook
             await Task.WhenAll(tasks);//Which throw exception this? 
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking3()
@@ -116,11 +115,11 @@ namespace Breakfast.Cook
                         }),
                     BrokeMakeToastWithButterAndJamAsync(2)//THROW InvalidOperationException
                 };
-            await Task.WhenAll(tasks);//Which throw exception this? 
+            await Task.WhenAll(tasks);//Which throw exception this?
             Console.WriteLine($"2 toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking4()
@@ -139,7 +138,7 @@ namespace Breakfast.Cook
             Console.WriteLine($"2 toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking5()
@@ -158,7 +157,7 @@ namespace Breakfast.Cook
             Console.WriteLine($"2 toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking6()
@@ -173,7 +172,7 @@ namespace Breakfast.Cook
             var list = new List<Task>() { taskOfFryEggs, taskOfFryBacon, taskOfMakeToast };
             while (list.Count > 0)
             {
-                Task task = await Task.WhenAny(list);//Which throw exception this or there will be no exceptions? 
+                Task task = await Task.WhenAny(list);//Which throw exception this or there will be no exceptions?
                 list.Remove(task);
                 if (task == taskOfFryEggs)
                     Console.WriteLine("eggs are READY!");
@@ -184,7 +183,7 @@ namespace Breakfast.Cook
             }
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking7()
@@ -214,7 +213,7 @@ namespace Breakfast.Cook
             }
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking8()
@@ -240,10 +239,10 @@ namespace Breakfast.Cook
                             ApplyJam(toasts.Result);
                             Console.WriteLine($"{toasts.Result.Count()} toast is READY!"); })
                 };
-            await Task.WhenAll(tasks);//Which throw exception this or there will be no exceptions? 
+            await Task.WhenAll(tasks);//Which throw exception this or there will be no exceptions?
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking9()
@@ -271,7 +270,7 @@ namespace Breakfast.Cook
             await Task.WhenAll(tasks);//Which throw exception this? 
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
 
         public static async Task BrokenСooking10()
@@ -296,7 +295,7 @@ namespace Breakfast.Cook
             await Task.WhenAll(tasks);//Which throw exception this? 
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
     }
 }

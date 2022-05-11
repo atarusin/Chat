@@ -46,7 +46,7 @@ namespace Breakfast.Cook
             Console.WriteLine($"2 toast is READY!");
 
             Juice oj = PourOJ();
-            Console.WriteLine("oj is READY!");
+            Console.WriteLine("Juice is READY!");
         }
     }
 }
